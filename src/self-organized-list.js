@@ -54,10 +54,10 @@ class SelfOrganizedList {
         var currentNode = this.head;
          
         while (currentNode) {
-            if (currentNode.data == data) {
+            if (currentNode.data == data) 
                 return currentNode;
-            }
-            currentNode = currentNode.next;
+            else
+                currentNode = currentNode.next;
         }
 
         return null;
@@ -110,11 +110,11 @@ class SelfOrganizedList {
         var currentNode = this.head,
             prevNode = null;
 
-        while (currentNode != null) {
+        while (currentNode) {
 
             if(currentNode == node) {
 
-                if(prevNode != null){
+                if(prevNode && currentNode.next){
                     prevNode.next = currentNode.next;
                     currentNode.next = this.head;
                     this.head = currentNode;
